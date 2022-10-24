@@ -8,7 +8,7 @@ int isMagicSquare(int ms[3][3]) {
     for (int i = 0; i < 3; i++) {
         if (ms[i][0] + ms[i][1] + ms[i][2] != 15 
                 || ms[0][i] + ms[1][i] + ms[2][i] != 15) {
-            return 1;
+            return 0;
         }
     }
     return ms[0][0] + ms[1][1] + ms[2][2] == 15 
@@ -33,7 +33,7 @@ int main() {
             ms[row][col] = i;
         }
         count++;
-    } while (isMagicSquare(ms) == 1);
+    } while (isMagicSquare(ms) == 0);
     printf("%d squares generated before a magic square was found\n", count);
     for (int row = 0; row < 3; row++) {
         printf("[%d %d %d]\n", ms[row][0], ms[row][1], ms[row][2]);
